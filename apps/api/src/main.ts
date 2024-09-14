@@ -1,9 +1,12 @@
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
+import mongoose from 'mongoose';
 
 import { corsOptions } from './config/corsConfig';
-
+import { verifyToken } from './middleware/auth';
+import { errorHandler } from './middleware/errorHandler';
+import auth from './routes/auth';
 import categories from './routes/categories';
 
 const host = process.env.HOST ?? 'localhost';
@@ -15,8 +18,22 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors(corsOptions));
 
+app.use('/api/auth', auth);
+
+app.use(verifyToken);
 app.use('/api/categories', categories);
 
-app.listen(port, host, () => {
-  console.log(`[ ready ] http://${host}:${port}`);
-});
+app.use(errorHandler);
+
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    console.log('Connected to MongoDB');
+
+    app.listen(port, host, () => {
+      console.log(`[ ready ] http://${host}:${port}`);
+    });
+  })
+  .catch((e) => {
+    console.error(e);
+  });
