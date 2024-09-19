@@ -4,7 +4,7 @@ interface ICategory extends Document {
   name: string;
 }
 
-export const categorySchema = new Schema<ICategory>(
+const categorySchema = new Schema<ICategory>(
   {
     name: {
       type: String,
