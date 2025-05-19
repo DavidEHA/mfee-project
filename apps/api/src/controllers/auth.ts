@@ -1,9 +1,13 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { Low } from 'lowdb';
+import { JSONFile } from 'lowdb/node';
 
 import { User } from '../models/user';
 
-const users: User[] = [];
+// Inicialización de lowdb para usuarios
+const adapter = new JSONFile<{ users: User[] }>('db-users.json');
+const db = new Low(adapter, { users: [] });
 
 const register = async (req, res) => {
   const { username, password } = req.body;
@@ -15,8 +19,9 @@ const register = async (req, res) => {
     });
   }
 
+  await db.read();
   // Check that we don't have duplicates
-  const duplicate = users.find((u) => u.username === username);
+  const duplicate = db.data.users.find((u) => u.username === username);
   if (duplicate) {
     return res.status(409).json({ message: 'User already exist' });
   }
@@ -26,7 +31,8 @@ const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Store new user
-    users.push({ username, password: hashedPassword });
+    db.data.users.push({ username, password: hashedPassword });
+    await db.write();
 
     res.status(201).json({ message: 'User registered successfully' });
   } catch (e) {
@@ -44,8 +50,9 @@ const login = async (req, res) => {
     });
   }
 
+  await db.read();
   // Retrieve user
-  const user = users.find((u) => u.username === username);
+  const user = db.data.users.find((u) => u.username === username);
 
   // Check if we found the user and the password matches
   if (!user || !(await bcrypt.compare(password, user.password))) {
