@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "title": "other",
+      "category": "Health",
+      "description": "description for this new post",
+      "image": "https://png.pngtree.com/background/20230613/original/pngtree-group-of-different-colored-birds-on-a-branch-picture-image_3425217.jpg",
+      "id": "i-kemcqUavzXh8mGPhsIw",
+      "comments": [],
+      "createdAt": "2025-05-19T03:32:48.525Z",
+      "updatedAt": "2025-05-19T03:32:48.525Z"
+    },
+    {
+      "title": "other",
+      "category": "Health",
+      "description": "description for this new post",
+      "image": "https://anjawessels.photography/wp-content/uploads/2018/04/IMG_4912-copy-3-copy.jpg?gid=22",
+      "id": "x286_wjTy1zjDJJn-FULT",
+      "comments": [],
+      "createdAt": "2025-05-19T03:34:46.166Z",
+      "updatedAt": "2025-05-19T03:34:46.166Z"
+    },
+    {
+      "title": "other",
+      "category": "Health",
+      "description": "description for this new post",
+      "image": "https://th.bing.com/th/id/OIP.m2YZ2vQ393Emx-6RQfbAGgHaFj?pid=ImgDet&w=474&h=355&rs=1",
+      "id": "Q556Xdwcg9NNlmEW-l0XW",
+      "comments": [],
+      "createdAt": "2025-05-19T03:35:54.850Z",
+      "updatedAt": "2025-05-19T03:35:54.850Z"
+    },
+    {
+      "title": "other",
+      "category": "Health",
+      "description": "description for this new post",
+      "image": "https://media-manager.starsinsider.com/gallery/1920/na_5dee1742c9d0a.jpg",
+      "id": "ULCsHB-o6bUFpJ4B514-U",
+      "comments": [],
+      "createdAt": "2025-06-29T22:54:35.730Z",
+      "updatedAt": "2025-06-29T22:54:35.730Z"
+    }
+  ]
+}

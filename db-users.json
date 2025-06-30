@@ -3,6 +3,10 @@
     {
       "username": "dav@outlook.com",
       "password": "$2b$10$MeQ0XAggt/KBbWb31T9sde0S0zKxmJzt0xa1CebClHhT94.HZDcQO"
+    },
+    {
+      "username": "jhon@example.com",
+      "password": "$2b$10$CNLpbBVq1XvqzilyNUIPHOwaYx2mUSeE0sch1TuNfkYZ9sNrSBzFe"
     }
   ]
 }
