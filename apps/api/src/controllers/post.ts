@@ -57,7 +57,7 @@ const deletePostHandler = async (req, res) => {
 // Get posts by category
 const getPostsByCategory = async (req, res) => {
   try {
-    const posts = (await getAllPosts()).filter(p => p.category === req.params.category);
+    const posts = (await getAllPosts()).filter((p) => p.category === req.params.category);
     res.status(200).json(posts);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -69,8 +69,8 @@ const createPostComment = async (req, res) => {
   try {
     const post = await getPostById(req.params.id);
     if (!post) return res.status(404).json({ message: 'Post not found' });
-    const comment = await createComment(req.body);
-    post.comments.push(comment.id);
+    const comment = await createComment({ ...req.body, post_id: req.params.id });
+    post.comments.push(comment);
     await updatePost(post.id, { comments: post.comments });
     res.status(201).json(comment);
   } catch (error) {

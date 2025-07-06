@@ -2,6 +2,7 @@
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 import { nanoid } from 'nanoid';
+import { Comment } from './comment';
 
 export interface Post {
   id: string;
@@ -9,7 +10,7 @@ export interface Post {
   image: string;
   description: string;
   category: string;
-  comments: string[];
+  comments: Comment[];
   createdAt: string;
   updatedAt: string;
 }

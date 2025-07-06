@@ -6,9 +6,39 @@
       "description": "description for this new post",
       "image": "https://png.pngtree.com/background/20230613/original/pngtree-group-of-different-colored-birds-on-a-branch-picture-image_3425217.jpg",
       "id": "i-kemcqUavzXh8mGPhsIw",
-      "comments": [],
+      "comments": [
+        {
+          "content": "new\n",
+          "author": "Juan",
+          "id": "25aFh54LCcmpYdwoNIAAO",
+          "createdAt": "2025-07-06T18:06:57.170Z",
+          "updatedAt": "2025-07-06T18:06:57.170Z"
+        },
+        {
+          "content": "nuevo",
+          "author": "Juan",
+          "id": "Ot2RxI72hbMiaRLss4--b",
+          "createdAt": "2025-07-06T18:07:53.395Z",
+          "updatedAt": "2025-07-06T18:07:53.395Z"
+        },
+        {
+          "content": "nuevo",
+          "author": "Juan",
+          "id": "4cLGU6A1bzIauFcDIZAoh",
+          "createdAt": "2025-07-06T18:08:20.763Z",
+          "updatedAt": "2025-07-06T18:08:20.763Z"
+        },
+        {
+          "content": "nuevo\n",
+          "author": "Juan",
+          "post_id": "i-kemcqUavzXh8mGPhsIw",
+          "id": "HEgp71Ft2MLHieE0SRVJQ",
+          "createdAt": "2025-07-06T18:12:46.440Z",
+          "updatedAt": "2025-07-06T18:12:46.440Z"
+        }
+      ],
       "createdAt": "2025-05-19T03:32:48.525Z",
-      "updatedAt": "2025-05-19T03:32:48.525Z"
+      "updatedAt": "2025-07-06T18:12:46.454Z"
     },
     {
       "title": "other",

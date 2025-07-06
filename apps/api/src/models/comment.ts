@@ -9,6 +9,7 @@ export interface Comment {
   content: string;
   createdAt: string;
   updatedAt: string;
+  post_id:string
 }
 
 const adapter = new JSONFile<{ comments: Comment[] }>('db-comments.json');
@@ -17,6 +18,11 @@ const db = new Low(adapter, { comments: [] });
 export async function getAllComments() {
   await db.read();
   return db.data?.comments || [];
+}
+
+export async function getCommentsByPostId(id: string) {
+  await db.read();
+  return db.data?.comments.filter((c) => c.post_id === id);
 }
 
 export async function getCommentById(id: string) {
